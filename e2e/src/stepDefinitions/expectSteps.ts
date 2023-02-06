@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { By } from 'selenium-webdriver'
 
 Then(
-    /^the fist search result should include "([^"]*)"$/, {timeout: 30000},
+    /^the fist search result should include "([^"]*)"$/,
     async function (expectedItem:string) {
         const items = await global.myDriver.findElements(By.className('sg-col-inner'));
         const firstItem = await items[3].getText();
@@ -12,7 +12,7 @@ Then(
 )
 
 Then(
-    /^the logo should be displayed$/, {timeout: 10000},
+    /^the logo should be displayed$/,
     async function () {
         const logo = await global.myDriver.findElement(By.id('nav-logo-sprites'));
         expect(await logo.isDisplayed()).to.be.true;
@@ -20,7 +20,7 @@ Then(
 )
 
 Then(
-    /^the homepage location selector displays "(.*)"$/, {timeout: 10000},
+    /^the homepage location selector displays "(.*)"$/,
     async function (expectedText:string) {
         global.myDriver.navigate().refresh();
         await global.myDriver.manage().setTimeouts( { implicit: 1000 } );
@@ -30,7 +30,7 @@ Then(
 )
 
 Then(
-    /^the price is equal to "(.*)"$/, {timeout: 10000},
+    /^the price is equal to "(.*)"$/,
     async function (expectedPriceString:string) {
         const itemsPricesStrings = await global.myDriver.findElements(By.className("a-offscreen"));
         const firstItemPriceString = await itemsPricesStrings[4].getAttribute("innerText");
@@ -43,7 +43,7 @@ Then(
 )
 
 Then(
-    /^I should see my username "(.*)" logged in on the homepage$/, {timeout: 10000},
+    /^I should see my username "(.*)" logged in on the homepage$/,
     async function (expectedUsername:string) {
         const userName = await global.myDriver.findElement(By.id("nav-link-accountList-nav-line-1"));
         expect(await userName.getText()).to.contain(expectedUsername);
@@ -51,7 +51,7 @@ Then(
 )
 
 Then(
-    /^the "(.*)" profile is not shown under user profiles$/, {timeout: 10000},
+    /^the "(.*)" profile is not shown under user profiles$/,
     async function (profileName:string) {
         const profiles = await global.myDriver.findElements(By.xpath(`//*[contains(text(), 'TestUser')]`));
         let result;

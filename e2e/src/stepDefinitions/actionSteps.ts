@@ -2,7 +2,7 @@ import { When } from '@cucumber/cucumber'
 import { By, Key } from 'selenium-webdriver'
 
 When(
-    /^I search for an "([^"]*)"$/, {timeout: 10000},
+    /^I search for an "([^"]*)"$/,
     async function (searchQuery:string) {
         const searchBar = await global.myDriver.findElement(By.id("twotabsearchtextbox")).sendKeys('xbox one x', Key.ENTER);
     }
@@ -38,7 +38,7 @@ When(
 )
 
 When(
-    /^I remove user profile "(.*)"$/, {timeout: 10000},
+    /^I remove user profile "(.*)"$/,
     async function (profileName:string) {
         const userDropdown = await global.myDriver.findElement(By.id("nav-link-accountList"));
         await userDropdown.click();
