@@ -16,10 +16,12 @@
     practice TDD.
 
 ## Things I would change from this code:
-    1. Create helper functions to reduce the need for waits/timeouts/etc. and ensure tests reliability
-    2. With more tests employ the page object pattern and have Given/When/Then methods on each corresonding page.
-    3. Add tags to the tests so groups of tests could be run separately
-    4. Adding further browsers (Safari, Firefox, Edge) and browser capabilities (ability to run headless, in
+    1. Most importantly the ability add data-test-id's to elements I need to interact with.  This can make a huge
+    increase in test reliability as its not dependent on DOM structure, or attributes that could change in the future.
+    2. Create helper functions to reduce the need for waits/timeouts/etc. and ensure tests reliability
+    3. With more tests employ the page object pattern and have Given/When/Then methods on each corresonding page.
+    4. Add tags to the tests so groups of tests could be run separately
+    5. Adding further browsers (Safari, Firefox, Edge) and browser capabilities (ability to run headless, in
     parallel, etc.).
-    5. Side note: When I know a developer is going to review my work I typically make granular commits to make
+    6. Side note: When I know a developer is going to review my work I typically make granular commits to make
     it easier.  In this case I committed all the code at the end.
